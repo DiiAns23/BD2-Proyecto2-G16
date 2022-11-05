@@ -10,7 +10,6 @@ const createRedisClient = async () => {
 }
 
 const getJSON = async (key) => {
-
     if (!redisClient.isOpen()) {
         await createRedisClient();
     }
@@ -50,5 +49,6 @@ const getPlayer = async (player) => {
 module.exports = {
     createRedisClient,
     getJSON,
-    getPlayer
+    getPlayer,
+    redisClient
 }

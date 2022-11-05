@@ -117,9 +117,8 @@ const consulta7_mongo = [{
     }
     },
     {'$sort': {'Total': 1}},
-    {'limit': 5}
+    {'$limit': 5}
 ]
-
 
 const consulta8_mongo = [{
     '$group': {
