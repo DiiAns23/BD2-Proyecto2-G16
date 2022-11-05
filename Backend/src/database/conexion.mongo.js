@@ -8,24 +8,15 @@ const port = process.env.PORT_MONGO_DB;
 const db = process.env.DB_MONGO_DB;
 const URI = `mongodb://${user}:${pass}@${host}:${port}`;
 
-const mongoClient = new MongoClient(URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
-
-mongoClient.connect(err => {
-    if (err) {
-        console.log(`Base de datos no conectada, ' + ${err.stack}`);
-        return;
-    }
-
-    console.log('Conexion a la base de datos de MongoDB establecida');
-});
 
 const Logs = async(collection,consulta) => {
-
+    const mongoClient = new MongoClient(URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    });
     
     try {
+        await mongoClient.connect();
         const dbmongo = mongoClient.db(db);
         const collec = await dbmongo.collection(collection)
         const result = await collec.aggregate(consulta).toArray();
