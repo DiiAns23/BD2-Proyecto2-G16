@@ -1,0 +1,12 @@
+version: '3'
+services:
+  database:
+    image: 'mongo'
+    container_name: 'database'
+    environment:
+      MONGO_INITDB_DATABASE: 'Proyecto2'
+      MONGO_INITDB_ROOT_USERNAME: 'Bases2'
+      MONGO_INITDB_ROOT_PASSWORD: '!Bases2.2022'
+    ports:
+      - '27017:27017'
+    restart: always
