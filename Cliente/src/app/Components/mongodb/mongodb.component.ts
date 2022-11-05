@@ -3,11 +3,11 @@ import { lectura } from 'src/app/models/lectura';
 import { HttpService } from 'src/app/services/http.service';
 
 @Component({
-  selector: 'app-mysql',
-  templateUrl: './mysql.component.html',
-  styleUrls: ['./mysql.component.css']
+  selector: 'app-mongodb',
+  templateUrl: './mongodb.component.html',
+  styleUrls: ['./mongodb.component.css']
 })
-export class MysqlComponent implements OnInit {
+export class MongodbComponent implements OnInit {
 
   public pacientes = [];
   public habitaciones = [];
@@ -18,7 +18,6 @@ export class MysqlComponent implements OnInit {
   public habitaciones_less = [];
   public timestampx = [];
 
-
   constructor(
     private _httpService: HttpService
   ) { }
@@ -27,7 +26,7 @@ export class MysqlComponent implements OnInit {
   }
 
   public consultaUno(){
-    this._httpService.postLectura(1,1).subscribe(
+    this._httpService.postLectura(2,1).subscribe(
       res=>{
         let lectura = <lectura> res;
         if(lectura.status = true){
@@ -37,7 +36,7 @@ export class MysqlComponent implements OnInit {
   }
 
   public consultaDos(){
-    this._httpService.postLectura(1,2).subscribe(res=>{
+    this._httpService.postLectura(2,2).subscribe(res=>{
       let lectura = <lectura> res;
       if(lectura.status = true){
         //console.log(lectura.message);
@@ -47,7 +46,7 @@ export class MysqlComponent implements OnInit {
   }
 
   public consultaTres(){
-    this._httpService.postLectura(1,3).subscribe(res=>{
+    this._httpService.postLectura(2,3).subscribe(res=>{
       let lectura = <lectura> res;
       if(lectura.status = true){
         this.generos = lectura.message;
@@ -56,7 +55,7 @@ export class MysqlComponent implements OnInit {
   }
 
   public consultaCuatro(){
-    this._httpService.postLectura(1,4).subscribe(res=>{
+    this._httpService.postLectura(2,4).subscribe(res=>{
       let lectura = <lectura> res;
       if(lectura.status = true){
         //console.log(lectura);
@@ -66,7 +65,7 @@ export class MysqlComponent implements OnInit {
   }
 
   public consultaCinco(){
-    this._httpService.postLectura(1,5).subscribe(res=>{
+    this._httpService.postLectura(2,5).subscribe(res=>{
       let lectura = <lectura> res;
       if(lectura.status = true){
         //console.log(lectura);
@@ -76,7 +75,7 @@ export class MysqlComponent implements OnInit {
   }
 
   public consultaSeis(){
-    this._httpService.postLectura(1,6).subscribe(res=>{
+    this._httpService.postLectura(2,6).subscribe(res=>{
       let lectura = <lectura> res;
       if(lectura.status = true){
         //console.log(lectura);
@@ -86,7 +85,7 @@ export class MysqlComponent implements OnInit {
   }
 
   public consultaSiete(){
-    this._httpService.postLectura(1,7).subscribe(res=>{
+    this._httpService.postLectura(2,7).subscribe(res=>{
       let lectura = <lectura> res;
       if(lectura.status = true){
         //console.log(lectura);
@@ -96,7 +95,7 @@ export class MysqlComponent implements OnInit {
   }
 
   public consultaOcho(){
-    this._httpService.postLectura(1,8).subscribe(res=>{
+    this._httpService.postLectura(2,8).subscribe(res=>{
       let lectura = <lectura> res;
       if(lectura.status = true){
         //console.log(lectura);

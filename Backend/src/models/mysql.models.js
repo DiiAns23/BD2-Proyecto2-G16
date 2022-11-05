@@ -12,40 +12,40 @@ GROUP BY Categoria;
 `
 
 const consulta2 = `
-SELECT h.Habitacion,COUNT(*) 
+SELECT h.Habitacion,COUNT(*) AS Cantidad 
 	FROM HABITACION h, LOG_ACTIVIDAD_1 la 
     WHERE h.idHabitacion = la.fk_idHabitacion
 GROUP BY Habitacion;
 `
 
 const consulta3 = `
-SELECT genero, COUNT(*) FROM PACIENTE GROUP BY genero;
+SELECT genero, COUNT(*) AS Cantidad FROM PACIENTE GROUP BY genero;
 `
 
 const consulta4 = `
-SELECT edad, COUNT(*) FROM PACIENTE GROUP BY edad ORDER BY COUNT(*) DESC LIMIT 5;
+SELECT edad, COUNT(*) AS Cantidad FROM PACIENTE GROUP BY edad ORDER BY COUNT(*) DESC LIMIT 5;
 `
 
 const consulta5 = `
-SELECT edad, COUNT(*) FROM PACIENTE GROUP BY edad ORDER BY COUNT(*) ASC LIMIT 5;
+SELECT edad, COUNT(*) AS Cantidad FROM PACIENTE GROUP BY edad ORDER BY COUNT(*) ASC LIMIT 5;
 `
 
 const consulta6 = `
-SELECT h.Habitacion, COUNT(*) 
+SELECT h.Habitacion, COUNT(*) AS Cantidad 
 	FROM HABITACION h, LOG_ACTIVIDAD_1 la 
     WHERE h.idHabitacion = la.fk_idHabitacion 
     GROUP BY Habitacion ORDER BY COUNT(*) DESC LIMIT 5;
 `
 
 const consulta7 = `
-SELECT h.Habitacion, COUNT(*) 
+SELECT h.Habitacion, COUNT(*) AS Cantidad 
 	FROM HABITACION h, LOG_ACTIVIDAD_1 la 
     WHERE h.idHabitacion = la.fk_idHabitacion
 GROUP BY Habitacion ORDER BY COUNT(*) ASC LIMIT 5;
 `
 
 const consulta8 = `
-SELECT la.timestampx, COUNT(*) 
+SELECT la.timestampx, COUNT(*) AS Cantidad
 	FROM LOG_ACTIVIDAD_1 la 
 GROUP BY timestampx ORDER BY COUNT(*) DESC LIMIT 1;
 `

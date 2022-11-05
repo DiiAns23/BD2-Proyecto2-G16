@@ -7,12 +7,14 @@ import { NavigationComponent } from './Components/navigation/navigation.componen
 import { MysqlComponent } from './Components/mysql/mysql.component';
 import { HttpService } from './services/http.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MongodbComponent } from './Components/mongodb/mongodb.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    MysqlComponent
+    MysqlComponent,
+    MongodbComponent
   ],
   imports: [
     BrowserModule,

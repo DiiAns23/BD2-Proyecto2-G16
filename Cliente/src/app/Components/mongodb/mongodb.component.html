@@ -1,5 +1,5 @@
 <app-navigation></app-navigation>
-<h1 style="font-style: bold; text-align: center;">MySQL</h1>
+<h1 style="font-style: bold; text-align: center;">MongoDB</h1>
 <div class="accordion" id="accordionExample">
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingOne">
@@ -9,7 +9,7 @@
       </h2>
       <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="">
         <div class="accordion-body">
-          <p *ngFor="let paciente of pacientes"><strong>{{paciente.Categoria}}: </strong>{{paciente.Total}}</p>
+          <p *ngFor="let paciente of pacientes"><strong>{{paciente._id}}: </strong>{{paciente.total}}</p>
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
       </h2>
       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample" style="">
         <div class="accordion-body">
-          <p *ngFor="let habitacion of habitaciones"><strong>{{habitacion.Habitacion}}: </strong>{{habitacion.Cantidad}}</p>
+          <p *ngFor="let habitacion of habitaciones"><strong>{{habitacion._id}}: </strong>{{habitacion.Total}}</p>
         </div>
       </div>
     </div>
@@ -33,7 +33,7 @@
       </h2>
       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-          <p *ngFor="let genero of generos"><strong>{{genero.genero}}: </strong>{{genero.Cantidad}}</p>
+          <p *ngFor="let genero of generos"><strong>{{genero._id}}: </strong>{{genero.Total}}</p>
         </div>
       </div>
     </div>
@@ -46,7 +46,7 @@
         </h2>
         <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
           <div class="accordion-body">
-            <p *ngFor="let edad of edades;let i=index"><strong>{{i+1}}. {{edad.edad}} años: </strong>{{edad.Cantidad}}</p>
+            <p *ngFor="let edad of edades;let i=index"><strong>{{i+1}}. {{edad._id}} años: </strong>{{edad.Total}}</p>
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@
         </h2>
         <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
           <div class="accordion-body">
-            <p *ngFor="let edad of edades2;let i=index"><strong>{{i+1}}. {{edad.edad}} años: </strong>{{edad.Cantidad}}</p>
+            <p *ngFor="let edad of edades2;let i=index"><strong>{{i+1}}. {{edad._id}} años: </strong>{{edad.Total}}</p>
           </div>
         </div>
       </div>
@@ -72,7 +72,7 @@
         </h2>
         <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
           <div class="accordion-body">
-            <p *ngFor="let habitacion of habitaciones_top"><strong>{{habitacion.Habitacion}}: </strong>{{habitacion.Cantidad}}</p>
+            <p *ngFor="let habitacion of habitaciones_top"><strong>{{habitacion._id}}: </strong>{{habitacion.Total}}</p>
           </div>
         </div>
       </div>
@@ -85,7 +85,7 @@
         </h2>
         <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
           <div class="accordion-body">
-            <p *ngFor="let habitacion of habitaciones_less"><strong>{{habitacion.Habitacion}}: </strong>{{habitacion.Cantidad}}</p>
+            <p *ngFor="let habitacion of habitaciones_less"><strong>{{habitacion._id}}: </strong>{{habitacion.Total}}</p>
           </div>
         </div>
       </div>
@@ -98,8 +98,9 @@
         </h2>
         <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
           <div class="accordion-body">
-            <p *ngFor="let time of timestampx"><strong>{{time.timestampx}}: </strong>{{time.Cantidad}}</p>
+            <p *ngFor="let time of timestampx"><strong>{{time._id}}: </strong>{{time.Total}}</p>
           </div>
         </div>
       </div>
   </div>
+
