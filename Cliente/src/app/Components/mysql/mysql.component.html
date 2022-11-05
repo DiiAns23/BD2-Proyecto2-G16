@@ -1,0 +1,105 @@
+<app-navigation></app-navigation>
+<h1 style="font-style: bold; text-align: center;">MySQL</h1>
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" (click)="consultaUno()">
+            Total de pacientes que llegan a la clínica
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="">
+        <div class="accordion-body">
+          <p *ngFor="let paciente of pacientes"><strong>{{paciente.Categoria}}: </strong>{{paciente.Total}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" (click)="consultaDos()">
+            Cantidad de pacientes que pasan por cada habitación
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample" style="">
+        <div class="accordion-body">
+          <p *ngFor="let habitacion of habitaciones"><strong>{{habitacion.Habitacion}}: </strong>{{habitacion.Cantidad}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" (click)="consultaTres()">
+            Cantidad de pacientes que llegan a la clínica
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <p *ngFor="let genero of generos"><strong>{{genero.genero}}: </strong>{{genero.Cantidad}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" (click)="consultaCuatro()">
+            Top 5 edades más atendidas en la clínica
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p *ngFor="let edad of edades;let i=index"><strong>{{i+1}}. {{edad.edad}} años: </strong>{{edad.Cantidad}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" (click)="consultaCinco()">
+            Top 5 edades menos atendidas en la clínica
+          </button>
+        </h2>
+        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p *ngFor="let edad of edades2;let i=index"><strong>{{i+1}}. {{edad.edad}} años: </strong>{{edad.Cantidad}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingSix">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix" (click)="consultaSeis()">
+            Top 5 habitaciones más utilizadas
+          </button>
+        </h2>
+        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p *ngFor="let habitacion of habitaciones_top"><strong>{{habitacion.Habitacion}}: </strong>{{habitacion.Cantidad}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingSeven">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven" (click)="consultaSiete()">
+            Top 5 habitaciones menos utilizadas
+          </button>
+        </h2>
+        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p *ngFor="let habitacion of habitaciones_less"><strong>{{habitacion.Habitacion}}: </strong>{{habitacion.Cantidad}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingEight">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight" (click)="consultaOcho()">
+            Día con más pacientes en la clínica
+          </button>
+        </h2>
+        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p *ngFor="let time of timestampx"><strong>{{time.timestampx}}: </strong>{{time.Cantidad}}</p>
+          </div>
+        </div>
+      </div>
+  </div>
