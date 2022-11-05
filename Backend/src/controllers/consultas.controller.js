@@ -3,6 +3,16 @@ const { consulta1, consulta2, consulta3, consulta4, consulta5, consulta6, consul
 const { consulta1_mongo, consulta2_mongo, consulta3_mongo, consulta4_mongo, consulta5_mongo, consulta6_mongo, consulta7_mongo, consulta8_mongo } = require('../models/mongo.models');
 const { execute } = require('../database/conexion.mysql');
 const { Logs } = require('../database/conexion.mongo');
+const client = require('../database/conexion.cassandra');
+
+let query = 'select * from basesdos.prueba';
+client.execute(query, [], function(error, result) {
+    if(error!=undefined){
+      console.log('Error:', err);
+    }else{
+      console.log(result.rows[0]);
+    }
+});
 
 const consultar = async (req, res) => {
     const { database, id_consulta } = req.body;
